@@ -1,19 +1,16 @@
 USE financas;
 
 /*Populando tabela de clientes*/
-
-INSERT INTO clientes (nome, cpf, senha, data_nascimento, profissao, genero)
+INSERT INTO clientes (nome, cpf, email, senha, data_nascimento, profissao, genero)
 VALUES 
-('Lucas da Silva Nogueira', '48699712324', '3523', '2003-05-24', 'Programador', 'M'),
-('Marcos Henry dos Santos', '73741591378', '4652', '1999-07-15', 'Enfermeiro', 'M'),
-('Stella Daniela Pires', '14931937322', '98542', '2002-10-05', 'Advogada', 'F'),
-('Vicente Noah Rodrigo Farias', '72645405290', '52135', '1980-07-15', 'Recrutador', 'M'),
-('Renan Matheus Bernardes', '35949128508', '26423', '1982-01-06', 'Secretário', 'M'),
-('Manuela Eliane Castro', '48939456025', '82645', '1984-02-11', 'Programadora', 'F');
-
+('Lucas da Silva Nogueira', '48699712324','lucas@gmail.com', '3523', '2003-05-24', 'Programador', 'M'),
+('Marcos Henry dos Santos', '73741591378','marcos@gmail.com', '4652', '1999-07-15', 'Enfermeiro', 'M'),
+('Stella Daniela Pires', '14931937322','stella@gmail.com', '98542', '2002-10-05', 'Advogada', 'F'),
+('Vicente Noah Rodrigo Farias', '72645405290','vicente@gmail.com', '52135', '1980-07-15', 'Recrutador', 'M'),
+('Renan Matheus Bernardes', '35949128508', 'renan@gmail.com','26423', '1982-01-06', 'Secretário', 'M'),
+('Manuela Eliane Castro', '48939456025', 'manuela@gmail.com','82645', '1984-02-11', 'Programadora', 'F');
 
 /*Populando tabela de endereços*/
-
 INSERT INTO enderecos (id_endereco, cep, rua, numero, complemento, bairro, cidade, estado, pais)
 VALUES 
 ('48699712324', '65076647', 'Rua Rio Balsas', '553', 'apt. 5', 'Ilhinha', 'São Vicente', 'SP', 'Brasil'),
@@ -55,6 +52,10 @@ VALUES
 INSERT INTO movimentacoes_financeiras (valor, data_movimentacao, codigo_banco, codigo_conta, categoria)
 VALUES
 ('200', '2022-08-10', '237', '235378291', 1),
+('195', '2022-08-12', '237', '235378291', 1),
+('235', '2022-08-13', '237', '235378291', 1),
+('153', '2022-08-14', '237', '235378291', 1),
+('120', '2022-08-15', '237', '235378291', 1),
 ('100', '2022-08-04', '237', '955211973', 2),
 ('2000', '2022-02-15', '237', '235378291', 3),
 ('150', '2022-04-10', '237', '955211973', 4),
@@ -68,5 +69,17 @@ VALUES
 ('5000', '2021-05-10', '001', '411282132', 4),
 ('7200', '2019-04-20', '033', '122924244', 2),
 ('1513', '2020-11-10', '001', '652266921', 1),
-('8300', '2020-02-15', '033', '992552435', 3),
-('1513', '2017-12-03', '001', '793555111', 4);
+('15', '2020-10-15', '033', '992552435', 3),
+('15', '2017-10-03', '001', '793555111', 4),
+('5', '2022-08-10', '033', '992552435', 1),
+('10', '2022-08-10', '033', '992552435', 1),
+('13', '2022-08-10', '033', '992552435', 1),
+('6', '2022-08-10', '033', '992552435', 1),
+('2', '2022-08-10', '033', '992552435', 1),
+('1', '2022-08-10', '033', '992552435', 1),
+('5', '2022-08-10', '033', '992552435', 1),
+('6', '2022-08-10', '033', '992552435', 1),
+('15', '2022-08-10', '033', '992552435', 1),
+('19', '2022-08-10', '033', '992552435', 1),
+('23', '2022-08-10', '033', '992552435', 1),
+('30', '2022-08-10', '033', '992552435', 1);

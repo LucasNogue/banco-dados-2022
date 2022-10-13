@@ -3,10 +3,10 @@ CREATE SCHEMA IF NOT EXISTS financas;
 USE financas;
 
 /*Criando a tabela cliente e sua chave primária*/
-
 CREATE TABLE clientes (
 nome VARCHAR(50) NOT NULL,
 cpf VARCHAR(11) NOT NULL,
+email VARCHAR(35) NOT NULL,
 senha VARCHAR(30) NOT NULL,
 data_nascimento DATE,
 profissao VARCHAR(25),
@@ -15,6 +15,7 @@ PRIMARY KEY (`cpf`));
 
 
 /*Criando a tabela enderecos e suas chaves primárias e estrangeiras*/
+
 CREATE TABLE enderecos (
 id_endereco VARCHAR(11) NOT NULL,
 cep VARCHAR(8),
@@ -28,7 +29,7 @@ pais VARCHAR(35) NOT NULL,
 PRIMARY KEY (id_endereco));
 
 ALTER TABLE enderecos ADD CONSTRAINT FK_ENDERECO
-FOREIGN KEY (id_endereco) REFERENCES clientes (cpf);
+FOREIGN KEY (id_endereco) REFERENCES clientes (cpf) ON DELETE CASCADE;
 
 
 /*Criando a tabela contas e suas chaves primárias e estrangeiras*/
@@ -42,7 +43,7 @@ saldo DECIMAL(15,2),
 PRIMARY KEY (codigo_banco, numero_conta));
 
 ALTER TABLE contas ADD CONSTRAINT FK_CONTAS
-FOREIGN KEY (cpf_cliente) REFERENCES clientes (cpf);
+FOREIGN KEY (cpf_cliente) REFERENCES clientes (cpf) ON DELETE CASCADE;
 
 
 /*Criando a tabela categorias e suas chaves primárias e estrangeiras*/
@@ -54,7 +55,7 @@ PRIMARY KEY (id_categoria, descricao));
 
 ALTER TABLE categorias
 ADD CONSTRAINT FK_CATEGORIA
-FOREIGN KEY (cpf_cliente) REFERENCES contas (cpf_cliente);
+FOREIGN KEY (cpf_cliente) REFERENCES contas (cpf_cliente) ON DELETE CASCADE;
 
 
 /*Criando a tabela movimentacoes financeiras e suas chaves primárias e estrangeiras*/
@@ -69,6 +70,6 @@ PRIMARY KEY (id_movimentacao));
 
 ALTER TABLE movimentacoes_financeiras 
 ADD CONSTRAINT FK_MOVIMENTACOES_FINANCEIRAS_CONTA
-FOREIGN KEY (codigo_banco, codigo_conta) REFERENCES contas (codigo_banco, numero_conta),
+FOREIGN KEY (codigo_banco, codigo_conta) REFERENCES contas (codigo_banco, numero_conta) ON DELETE CASCADE,
 ADD CONSTRAINT FK_MOVIMENTACOES_FINANCEIRAS_CATEGORIAS
-FOREIGN KEY (categoria) REFERENCES categorias (id_categoria);
+FOREIGN KEY (categoria) REFERENCES categorias (id_categoria) ON DELETE CASCADE;

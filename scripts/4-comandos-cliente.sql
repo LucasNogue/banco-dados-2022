@@ -98,4 +98,4 @@ con.numero_conta AS NUMERO_CONTA,
 con.saldo AS SALDO
 FROM contas con
 INNER JOIN clientes cli ON cli.cpf = con.cpf_cliente
-WHERE cli.cpf = '73741591378';9);
+WHERE cli.cpf = '73741591378';

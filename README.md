@@ -19,7 +19,7 @@ Verifique a descrição completa do desafio: [Desafio Banco de Dados e SQL](http
 
 ### 1 - Entendemos que agora é necessário adicionar uma descrição a uma movimentação, e essa descrição será obrigatória. ps: E se já tivermos dados inseridos, precisamos ter algum cuidado?
 
-Sim, é necessário cuidado quanto inserir um novo campo depois de já ter dados na tabela, uma 
+Sim, é necessário cuidado quando inserir um novo campo depois de já ter dados na tabela, uma possível
 solução é criar um valor padrão para evitar campos com NULL.
 
 ### 2 - Percebemos que precisamos ter mais precisão no valor da movimentação financeira. Agora queremos ter 4 casas após a vírgula. ps: Extra: E se fossemos diminuir a precisão, digamos de 6 casas decimais para 4, podemos reduzir a precisão? Se sim, como?

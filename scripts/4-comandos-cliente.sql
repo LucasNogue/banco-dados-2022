@@ -1,6 +1,6 @@
 --   consultas dos clientes   
 
--- 1° consulta | Buscar todos os gatos de um cliente em agosto de 2022
+-- 1° consulta | Buscar todos os gastos de um cliente em agosto de 2022
 SELECT cli.nome AS CLIENTE, movi.valor AS VALOR, cat.tipo AS TIPO,
 movi.data_movimentacao AS DATA_MOVIMENTACÃO
 FROM contas con
